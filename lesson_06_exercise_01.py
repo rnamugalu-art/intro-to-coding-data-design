@@ -136,8 +136,11 @@ if __name__ == "__main__":
             break
 
         weather, temperature = get_weather(city)
-
-        print(
+        
+        if weather == "Error" or temperature != temperature:
+            print(f"Could not find weather data for {city}.")
+        else:
+            print(
             f"The current weather in {city} is {weather} "
             f"and the temperature is {temperature}°C."
         )
